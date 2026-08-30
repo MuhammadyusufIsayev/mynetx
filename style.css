@@ -1538,13 +1538,10 @@ button {
 }
 
 
-/* =========================================================
-   RESPONSIVE
-   Clean mobile/tablet rules
-   Desktop/base design remains unchanged above.
-   ========================================================= */
+/* RESPONSIVE */
 
 @media (max-width: 1100px) {
+
     .nav {
         gap: 14px;
     }
@@ -1558,32 +1555,25 @@ button {
     }
 
     .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2,1fr);
     }
 
     .why-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2,1fr);
     }
 }
 
 
 @media (max-width: 850px) {
 
-    .header {
-        padding: 0;
-    }
-
     .nav {
         position: fixed;
-        top: 72px;
-        left: 14px;
-        right: 14px;
 
-        max-height: calc(100vh - 88px);
-        overflow-y: auto;
+        top: 82px;
+        left: 15px;
+        right: 15px;
 
-        padding: 12px;
-        gap: 0;
+        padding: 20px;
 
         flex-direction: column;
         align-items: stretch;
@@ -1591,65 +1581,251 @@ button {
         background: rgba(7,11,17,.98);
 
         border: 1px solid var(--border);
-        border-radius: 16px;
 
-        box-shadow: 0 20px 60px rgba(0,0,0,.45);
+        border-radius: 15px;
 
-        transform: translateY(-12px) scale(.98);
+        transform: translateY(-20px);
+
         opacity: 0;
+
         pointer-events: none;
 
-        transition: .25s ease;
+        transition: .3s;
     }
 
     .nav.open {
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
+
         opacity: 1;
+
         pointer-events: auto;
     }
 
     .nav a {
-        display: flex;
-        align-items: center;
-
-        min-height: 48px;
-        padding: 12px 14px;
-
-        font-size: 12px;
+        padding: 12px;
 
         border-bottom: 1px solid var(--border);
-        border-radius: 9px;
+
+        font-size: 12px;
     }
 
     .nav a:last-child {
-        border-bottom: 0;
-    }
-
-    .nav a:hover,
-    .nav a:active {
-        background: rgba(47,140,255,.08);
+        border: none;
     }
 
     .menu-btn {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
-
-        width: 42px;
-        height: 42px;
-        flex: 0 0 42px;
-    }
-
-    .menu-btn span {
-        width: 19px;
-        height: 2px;
-        margin: 0;
+        display: block;
     }
 
     .nav-cta {
         display: none;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        padding-top: 125px;
+        padding-bottom: 80px;
+    }
+
+    .hero-visual {
+        max-width: 500px;
+    }
+
+    .about-grid,
+    .tech-content,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .stat:nth-child(2) {
+        border: none;
+    }
+
+    .clients-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .container {
+        width: min(
+            calc(100% - 28px),
+            var(--container)
+        );
+    }
+
+    .nav-container {
+        height: 70px;
+    }
+
+    .nav {
+        top: 70px;
+    }
+
+    .brand-logo {
+        width: 110px;
+    }
+
+    .hero-container {
+        padding-top: 110px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        letter-spacing: -2.5px;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero-trust {
+        gap: 13px;
+        justify-content: space-between;
+    }
+
+    .trust-line {
+        display: none;
+    }
+
+    .trust-item strong {
+        font-size: 18px;
+    }
+
+    .trust-item span {
+        font-size: 7px;
+    }
+
+    .camera-card {
+        transform: none;
+    }
+
+    .camera-view {
+        height: 250px;
+    }
+
+    .section {
+        padding: 85px 0;
+    }
+
+    .section-heading h2,
+    .about-content h2,
+    .contact-content h2 {
+        font-size: 36px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: auto;
+    }
+
+    .about-box {
+        width: 100%;
+        height: 350px;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 10px;
+    }
+
+    .stat {
+        border: none !important;
+    }
+
+    .stat strong {
+        font-size: 36px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 230px;
+    }
+
+    .clients-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .client-logo {
+        height: 100px;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tech-item {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 9px;
+    }
+
+    .tech-item img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        min-height: 350px;
+    }
+
+    .contact-card-content {
+        height: 280px;
+    }
+
+    .footer-top,
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 0;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
+/* =====================================================
+   MOBILE HEADER + CLIENT LOGO IMPROVEMENTS
+   ===================================================== */
+
+/* Keep the header compact and stable on small screens. */
+@media (max-width: 850px) {
+    .header {
+        padding: 0;
     }
 
     .nav-container {
@@ -1659,8 +1835,10 @@ button {
     }
 
     .brand {
-        min-width: 0;
         flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        min-width: 0;
     }
 
     .brand-logo {
@@ -1682,57 +1860,96 @@ button {
 
     .lang-btn {
         min-width: 34px;
-        padding: 7px;
+        padding: 7px 7px;
         font-size: 9px;
     }
 
-    .hero-container {
-        grid-template-columns: minmax(0, 1fr);
-        padding-top: 125px;
-        padding-bottom: 80px;
+    .menu-btn {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
     }
 
-    .hero-visual {
-        width: 100%;
-        max-width: 500px;
-        margin-inline: auto;
+    .menu-btn span {
+        width: 19px;
+        height: 2px;
+        margin: 0;
     }
 
-    .about-grid,
-    .tech-content,
-    .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 50px;
+    .nav {
+        top: 82px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+        max-height: calc(100vh - 96px);
+        overflow-y: auto;
+        padding: 10px;
+        gap: 0;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0,0,0,.45);
+        transform: translateY(-12px) scale(.98);
     }
 
-    .stats-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .nav.open {
+        transform: translateY(0) scale(1);
     }
 
-    .stat:nth-child(2) {
-        border: none;
+    .nav a {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 13px 14px;
+        font-size: 12px;
+        border-bottom: 1px solid var(--border);
+        border-radius: 9px;
     }
 
+    .nav a:last-child {
+        border-bottom: 0;
+    }
+
+    .nav a:active,
+    .nav a:hover {
+        background: rgba(47,140,255,.08);
+    }
+
+    /* Larger client logos on tablets/phones. */
     .clients-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    body.menu-open {
-        overflow: hidden;
+    .client-logo {
+        height: 135px;
+        padding: 18px;
+    }
+
+    .client-logo img {
+        width: auto;
+        max-width: 175px;
+        max-height: 78px;
+        opacity: .8;
     }
 }
 
-
 @media (max-width: 600px) {
-
     .container {
-        width: calc(100% - 28px);
-        max-width: var(--container);
+        width: min(calc(100% - 24px), var(--container));
     }
 
     .nav-container {
         height: 68px;
         min-height: 68px;
+    }
+
+    .brand-logo {
+        width: 108px;
+        max-width: 108px;
+        max-height: 38px;
     }
 
     .nav {
@@ -1742,19 +1959,13 @@ button {
         max-height: calc(100vh - 80px);
     }
 
-    .brand-logo {
-        width: 108px;
-        max-width: 108px;
-        max-height: 38px;
-    }
-
     .nav-right {
         gap: 7px;
     }
 
     .lang-btn {
         min-width: 32px;
-        padding: 6px;
+        padding: 6px 6px;
     }
 
     .menu-btn {
@@ -1763,144 +1974,14 @@ button {
         flex-basis: 40px;
     }
 
-    /* Hero */
-    .hero-container {
-        padding-top: 110px;
-        padding-bottom: 65px;
-        gap: 40px;
-    }
-
-    .hero h1 {
-        max-width: 100%;
-        font-size: clamp(38px, 10vw, 46px);
-        line-height: 1.04;
-        letter-spacing: -2px;
-        overflow-wrap: break-word;
-    }
-
-    .hero p {
-        max-width: 100%;
-        font-size: 12px;
-        line-height: 1.65;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero-buttons .btn,
-    .btn {
-        width: 100%;
-    }
-
-    .hero-trust {
-        gap: 13px;
-        justify-content: space-between;
-    }
-
-    .trust-line {
-        display: none;
-    }
-
-    .trust-item {
-        min-width: 0;
-    }
-
-    .trust-item strong {
-        font-size: 18px;
-    }
-
-    .trust-item span {
-        font-size: 7px;
-    }
-
-    .camera-card {
-        transform: none;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .camera-view {
-        height: 250px;
-    }
-
-    /* Sections */
-    .section {
-        padding: 85px 0;
-    }
-
-    .section-heading h2,
-    .about-content h2,
-    .contact-content h2 {
-        max-width: 100%;
-        font-size: clamp(32px, 8vw, 38px);
-        line-height: 1.08;
-        letter-spacing: -1.2px;
-        overflow-wrap: break-word;
-    }
-
-    .section-heading p {
-        max-width: 100%;
-        font-size: 12px;
-        line-height: 1.65;
-    }
-
-    /* Services */
-    .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
-
-    .service-card {
-        min-height: auto;
-    }
-
-    /* About */
-    .about-box {
-        width: 100%;
-        height: 350px;
-    }
-
-    .about-features {
-        grid-template-columns: 1fr;
-    }
-
-    /* Stats */
-    .stats-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 30px 10px;
-    }
-
-    .stat {
-        border: none !important;
-        min-width: 0;
-    }
-
-    .stat strong {
-        font-size: 36px;
-    }
-
-    /* Projects */
-    .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
-
-    .project-image {
-        height: 230px;
-    }
-
-    /* Clients */
     .clients-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
         margin-top: 28px;
         margin-bottom: 30px;
     }
 
     .client-logo {
         height: 125px;
-        padding: 14px;
+        padding: 12px;
     }
 
     .client-logo img {
@@ -1922,148 +2003,54 @@ button {
     .more-clients span {
         font-size: 10px;
     }
-
-    /* Technology */
-    .tech-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .tech-item {
-        flex-direction: column;
-        gap: 8px;
-        font-size: 9px;
-        min-width: 0;
-    }
-
-    .tech-item img {
-        width: 38px;
-        height: 38px;
-    }
-
-    /* Why */
-    .why-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
-
-    .why-card {
-        min-width: 0;
-        padding: 22px;
-    }
-
-    /* Contact */
-    .contact-links {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-card {
-        min-height: 350px;
-    }
-
-    .contact-card-content {
-        height: 280px;
-    }
-
-    /* Footer */
-    .footer-top,
-    .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 30px 0;
-    }
-
-    .footer-links {
-        flex-wrap: wrap;
-    }
-
-    /* Instagram/video section compatibility */
-    .instagram-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
-
-    .instagram-card {
-        min-width: 0;
-        overflow: hidden;
-    }
-
-    .instagram-card video {
-        display: block;
-        width: 100%;
-        aspect-ratio: 9 / 16;
-        object-fit: cover;
-    }
 }
 
-
-/* 381px — 520px: careful adjustments only */
-@media (min-width: 381px) and (max-width: 520px) {
-
-    .container {
-        width: calc(100% - 32px);
+@media (max-width: 360px) {
+    .brand-logo {
+        width: 98px;
+        max-width: 98px;
     }
 
-    .hero-container {
-        gap: 34px;
+    .lang-btn {
+        min-width: 30px;
+        padding-inline: 5px;
     }
 
-    .hero h1 {
-        font-size: clamp(34px, 9vw, 44px);
-        line-height: 1.05;
-        letter-spacing: -1.5px;
-    }
-
-    .hero p {
-        font-size: 12.5px;
-    }
-
-    .hero-buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .hero-buttons .btn {
-        width: auto;
-        flex: 1 1 145px;
-    }
-
-    .camera-view {
-        height: 230px;
-    }
-
-    .section-heading h2,
-    .about-content h2,
-    .contact-content h2 {
-        font-size: clamp(29px, 7vw, 36px);
+    .menu-btn {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
     }
 
     .client-logo {
-        height: 125px;
+        height: 112px;
+        padding: 9px;
     }
 
     .client-logo img {
-        max-width: 90%;
-        max-height: 76px;
+        max-width: 132px;
+        max-height: 74px;
     }
+}
 
-    .instagram-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+@media (max-width: 850px) {
+    body.menu-open {
+        overflow: hidden;
     }
 }
 
 
-/* 330px — 380px */
+/* =====================================================
+   EXTRA SMALL MOBILE HEADER FIX — 330px and below
+   ===================================================== */
 @media (max-width: 380px) {
-
-    .container {
-        width: calc(100% - 18px);
-    }
-
-    .nav-container {
+    .container.nav-container {
         width: calc(100% - 16px);
+        max-width: none;
         height: 64px;
         min-height: 64px;
         gap: 4px;
+        padding: 0;
     }
 
     .brand {
@@ -2073,34 +2060,44 @@ button {
     }
 
     .brand-logo {
+        display: block;
         width: 88px;
         max-width: 88px;
+        height: auto;
         max-height: 34px;
+        object-fit: contain;
+        object-position: left center;
     }
 
     .nav-right {
+        flex: 0 0 auto;
+        margin-left: auto;
         gap: 4px;
     }
 
     .language-switcher {
+        flex: 0 0 auto;
         padding: 2px;
         gap: 1px;
+        border-radius: 7px;
     }
 
     .lang-btn {
-        width: 28px;
         min-width: 28px;
+        width: 28px;
         height: 28px;
         padding: 0;
         font-size: 8px;
         line-height: 28px;
+        border-radius: 5px;
     }
 
     .menu-btn {
+        flex: 0 0 36px;
         width: 36px;
-        min-width: 36px;
         height: 36px;
-        flex-basis: 36px;
+        min-width: 36px;
+        border-radius: 8px;
     }
 
     .menu-btn span {
@@ -2112,9 +2109,42 @@ button {
         top: 64px;
         left: 8px;
         right: 8px;
+        width: auto;
+        max-width: none;
+    }
+}
+
+/* Extra protection for the smallest common phone widths */
+@media (max-width: 340px) {
+    .container.nav-container {
+        width: calc(100% - 12px);
     }
 
-    /* Hero */
+    .brand-logo {
+        width: 82px;
+        max-width: 82px;
+    }
+
+    .lang-btn {
+        min-width: 26px;
+        width: 26px;
+        font-size: 7.5px;
+    }
+
+    .menu-btn {
+        flex-basis: 34px;
+        width: 34px;
+        min-width: 34px;
+        height: 34px;
+    }
+}
+
+/* =====================================================
+   ULTRA SMALL SCREENS — HERO / MAIN TEXT FIX
+   Prevent large headings and content from overflowing at
+   330px and smaller widths.
+   ===================================================== */
+@media (max-width: 380px) {
     .hero {
         min-height: auto;
         overflow: hidden;
@@ -2122,8 +2152,9 @@ button {
 
     .hero-container {
         width: calc(100% - 20px);
+        max-width: none;
         grid-template-columns: minmax(0, 1fr);
-        gap: 28px;
+        gap: 34px;
         padding-top: 92px;
         padding-bottom: 50px;
     }
@@ -2149,10 +2180,12 @@ button {
         width: 100%;
         max-width: 100%;
         margin-bottom: 18px;
-        font-size: 31px;
+        font-size: 32px;
         line-height: 1.04;
-        letter-spacing: -1.3px;
+        letter-spacing: -1.4px;
         overflow-wrap: anywhere;
+        word-break: normal;
+        hyphens: auto;
     }
 
     .hero p {
@@ -2170,17 +2203,18 @@ button {
         margin-bottom: 30px;
     }
 
-    .hero-buttons .btn,
     .btn {
-        width: 100%;
         min-width: 0;
+        width: 100%;
         padding: 12px 13px;
         font-size: 10px;
+        line-height: 1.25;
     }
 
     .hero-trust {
         width: 100%;
         gap: 7px;
+        justify-content: space-between;
     }
 
     .trust-item {
@@ -2190,17 +2224,23 @@ button {
 
     .trust-item strong {
         font-size: 17px;
+        line-height: 1.1;
     }
 
     .trust-item span {
         font-size: 6px;
         line-height: 1.3;
+        letter-spacing: .35px;
         overflow-wrap: anywhere;
     }
 
     .trust-line {
         flex: 0 0 1px;
         height: 28px;
+    }
+
+    .hero-visual {
+        overflow: hidden;
     }
 
     .camera-card {
@@ -2213,144 +2253,182 @@ button {
     .camera-view {
         height: 190px;
     }
-
-    /* Section headings */
-    .section-heading h2,
-    .about-content h2,
-    .contact-content h2 {
-        font-size: 25px;
-        line-height: 1.1;
-    }
-
-    /* Keep cards compact but preserve the visual system */
-    .services-grid,
-    .projects-grid,
-    .why-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-    }
-
-    .service-card,
-    .project-card,
-    .why-card {
-        min-width: 0;
-    }
-
-    .project-image {
-        height: 180px;
-    }
-
-    .why-card {
-        padding: 16px;
-    }
-
-    /* Clients */
-    .clients-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0;
-    }
-
-    .client-logo {
-        height: 100px;
-        padding: 9px;
-    }
-
-    .client-logo img {
-        max-width: 88%;
-        max-height: 58px;
-    }
-
-    /* Technology */
-    .tech-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    /* Instagram */
-    .instagram-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
 }
 
-
-/* 330px and below */
-@media (max-width: 330px) {
-
-    .container {
-        width: calc(100% - 14px);
-    }
-
-    .brand-logo {
-        width: 82px;
-        max-width: 82px;
-    }
-
-    .lang-btn {
-        width: 26px;
-        min-width: 26px;
-        font-size: 7.5px;
-    }
-
-    .menu-btn {
-        width: 34px;
-        min-width: 34px;
-        height: 34px;
-        flex-basis: 34px;
-    }
-
+@media (max-width: 340px) {
     .hero-container {
-        width: calc(100% - 14px);
+        width: calc(100% - 16px);
         padding-top: 88px;
         padding-bottom: 44px;
-        gap: 24px;
+        gap: 28px;
     }
 
     .hero h1 {
-        font-size: 28px;
-        letter-spacing: -1.1px;
+        font-size: 29px;
+        letter-spacing: -1.15px;
     }
 
     .hero p {
         font-size: 10.5px;
     }
 
-    .section-heading h2,
-    .about-content h2,
-    .contact-content h2 {
-        font-size: 23px;
+    .eyebrow {
+        font-size: 6.5px;
     }
 
-    .project-image {
-        height: 160px;
+    .trust-item strong {
+        font-size: 15px;
     }
 
-    .client-logo {
-        height: 92px;
+    .trust-item span {
+        font-size: 5.5px;
     }
 
-    .client-logo img {
-        max-height: 52px;
+    .camera-view {
+        height: 175px;
     }
 }
 
 
-/* Prevent accidental horizontal overflow without changing desktop layout */
-@media (max-width: 850px) {
-    .hero-content,
-    .hero-visual,
-    .section-heading,
-    .service-card,
-    .project-card,
-    .client-logo,
-    .tech-item,
-    .why-card,
-    .contact-card {
-        min-width: 0;
+/* =====================================================
+   INSTAGRAM / LOCAL AUTOPLAY VIDEOS
+   ===================================================== */
+
+.instagram-videos {
+    background: #05080d;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.instagram-video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+    align-items: start;
+}
+
+.instagram-video-card {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: #080d14;
+    box-sizing: border-box;
+}
+
+/* Every Reel gets exactly the same 9:16 frame. */
+.instagram-video-wrap {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 177.7777778%;
+    overflow: hidden;
+    background: #02050a;
+    box-sizing: border-box;
+}
+
+.instagram-video {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: #02050a;
+    object-fit: cover;
+    object-position: center center;
+    box-sizing: border-box;
+}
+
+.video-muted-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 8px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 999px;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 7px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 1px;
+    pointer-events: none;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.instagram-button-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+}
+
+/* Large desktop / laptop */
+@media (min-width: 1001px) {
+    .instagram-video-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Tablet */
+@media (max-width: 1000px) and (min-width: 601px) {
+    .instagram-video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .instagram-video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
     }
 
-    img,
-    video,
-    iframe {
-        max-width: 100%;
+    .instagram-video-card {
+        border-radius: 14px;
+    }
+
+    .video-muted-badge {
+        top: 7px;
+        right: 7px;
+        padding: 4px 6px;
+        font-size: 6px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+    .instagram-video-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 420px;
+        margin-inline: auto;
+        gap: 12px;
+    }
+
+    .instagram-video-card {
+        border-radius: 12px;
     }
 }
