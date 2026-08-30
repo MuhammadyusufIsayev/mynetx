@@ -1960,22 +1960,7 @@ iframe {
         max-height: 76px;
         object-fit: contain;
     }
-
-    /* About / contact */
-    .about-box {
-        width: 100%;
-        height: 350px;
-    }
-
-    .about-features {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .contact-links {
-        grid-template-columns: 1fr;
-    }
-
-    /* Stats */
+/* Stats */
     .stats-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 30px 10px;
@@ -2565,5 +2550,254 @@ iframe {
 
     .instagram-button-wrap .btn {
         width: 100%;
+    }
+}
+
+
+/* =========================================================
+   CONTACT — FINAL RESPONSIVE FIX
+   Keeps the original desktop design and prevents the
+   400–600px layout from becoming cramped.
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 42px;
+        align-items: start;
+    }
+
+    .contact-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .contact-content > p {
+        max-width: 620px;
+        margin-bottom: 28px;
+    }
+
+    .contact-links {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .contact-link {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .contact-link strong,
+    .contact-link small {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 100%;
+        min-height: 390px;
+    }
+
+    .contact-card-content {
+        width: 100%;
+        height: 310px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .contact-logo {
+        max-width: 145px;
+    }
+
+    .contact-card h3 {
+        max-width: 100%;
+        font-size: 25px;
+        line-height: 1.1;
+        overflow-wrap: break-word;
+    }
+
+    .contact-card p {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+}
+
+
+@media (min-width: 401px) and (max-width: 600px) {
+
+    .contact {
+        overflow: hidden;
+    }
+
+    .contact-grid {
+        width: 100%;
+        gap: 38px;
+    }
+
+    .contact-content {
+        width: 100%;
+    }
+
+    .contact-content > p {
+        font-size: 12px;
+        line-height: 1.7;
+        margin-bottom: 28px;
+    }
+
+    .contact-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .contact-link {
+        padding: 13px;
+        gap: 10px;
+        border-radius: 11px;
+    }
+
+    .contact-icon {
+        width: 34px;
+        height: 34px;
+        flex: 0 0 34px;
+    }
+
+    .contact-link small {
+        font-size: 7px;
+        line-height: 1.3;
+    }
+
+    .contact-link strong {
+        font-size: 9px;
+        line-height: 1.35;
+    }
+
+    .contact-card {
+        min-height: 390px;
+        border-radius: 20px;
+    }
+
+    .contact-card-top {
+        padding: 18px;
+    }
+
+    .contact-card-content {
+        height: 300px;
+        padding: 18px;
+    }
+
+    .contact-logo {
+        width: 135px;
+        max-height: 70px;
+        margin-bottom: 22px;
+    }
+
+    .contact-card h3 {
+        font-size: 24px;
+        letter-spacing: -.7px;
+    }
+
+    .contact-card p {
+        font-size: 10px;
+        line-height: 1.55;
+        margin-bottom: 18px;
+    }
+}
+
+
+@media (min-width: 331px) and (max-width: 400px) {
+
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .contact-links {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .contact-link {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .contact-card {
+        min-height: 350px;
+        border-radius: 18px;
+    }
+
+    .contact-card-top {
+        padding: 16px;
+    }
+
+    .contact-card-content {
+        height: 270px;
+        padding: 15px;
+    }
+
+    .contact-logo {
+        width: 120px;
+        max-height: 65px;
+        margin-bottom: 18px;
+    }
+
+    .contact-card h3 {
+        font-size: 22px;
+    }
+
+    .contact-card p {
+        font-size: 9px;
+    }
+}
+
+
+@media (max-width: 330px) {
+
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .contact-links {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .contact-link {
+        width: 100%;
+        padding: 11px;
+    }
+
+    .contact-card {
+        min-height: 330px;
+        border-radius: 16px;
+    }
+
+    .contact-card-top {
+        padding: 14px;
+    }
+
+    .contact-card-content {
+        height: 245px;
+        padding: 12px;
+    }
+
+    .contact-logo {
+        width: 105px;
+        max-height: 58px;
+        margin-bottom: 15px;
+    }
+
+    .contact-card h3 {
+        font-size: 20px;
+    }
+
+    .contact-card p {
+        font-size: 8px;
+        line-height: 1.5;
     }
 }
