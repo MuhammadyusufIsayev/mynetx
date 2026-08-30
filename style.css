@@ -2801,3 +2801,178 @@ iframe {
         line-height: 1.5;
     }
 }
+
+
+/* =========================================================
+   CONTACT CARD — MOBILE HIDDEN
+   Desktop and tablet only
+   ========================================================= */
+@media (max-width: 600px) {
+    .contact-card {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   TECHNOLOGIES — FINAL MOBILE FIX
+   Text stays on top, technology brands move below it.
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .tech-content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 38px;
+        width: 100%;
+    }
+
+    .tech-content > * {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .tech-grid {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        border-top: 1px solid var(--border);
+        border-left: 1px solid var(--border);
+
+        overflow: hidden;
+    }
+
+    .tech-item {
+        min-width: 0;
+        min-height: 105px;
+
+        padding: 14px 8px;
+
+        gap: 8px;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+
+        overflow: hidden;
+    }
+
+    .tech-item img {
+        width: 42px;
+        height: 42px;
+
+        flex: 0 0 auto;
+    }
+
+    .tech-item span {
+        min-width: 0;
+        max-width: 100%;
+
+        font-size: 9px;
+        line-height: 1.25;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+}
+
+
+/* 401px — 600px */
+@media (min-width: 401px) and (max-width: 600px) {
+
+    .tech-content {
+        gap: 34px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+    }
+
+    .tech-item {
+        min-height: 112px;
+        padding: 14px 8px;
+    }
+
+    .tech-item img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .tech-item span {
+        font-size: 9px;
+    }
+}
+
+
+/* 331px — 400px */
+@media (min-width: 331px) and (max-width: 400px) {
+
+    .tech-content {
+        gap: 28px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+    }
+
+    .tech-item {
+        min-height: 105px;
+        padding: 13px 7px;
+    }
+
+    .tech-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tech-item span {
+        font-size: 8px;
+        line-height: 1.25;
+    }
+}
+
+
+/* 330px and below */
+@media (max-width: 330px) {
+
+    .tech-content {
+        gap: 25px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+    }
+
+    .tech-item {
+        min-height: 96px;
+        padding: 11px 6px;
+    }
+
+    .tech-item img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .tech-item span {
+        font-size: 7px;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 850px) {
+
+    .tech-item img,
+    .client-logo img {
+        filter: none !important;
+        opacity: 1 !important;
+    }
+
+}
